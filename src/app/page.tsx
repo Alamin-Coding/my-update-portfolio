@@ -13,50 +13,12 @@ import {
   Layers,
   Moon,
   Sun,
+  Facebook,
 } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
-interface FormErrors {
-  name: string;
-  email: string;
-  message: string;
-}
-
-interface TouchedFields {
-  name: boolean;
-  email: boolean;
-  message: boolean;
-}
-
-interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  image: string;
-  link: string;
-}
-
-interface Skill {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-interface Award {
-  number: string;
-  text: string;
-}
-
-interface FAQ {
-  q: string;
-  a: string;
-}
+import type {Award,FAQ,FormData,FormErrors,Project,Skill,TouchedFields} from "@/types/typeInterface"
+import PortfolioSection from '@/components/PortfolioSection';
 
 type SectionId = 'home' | 'about' | 'projects' | 'contact';
 
@@ -385,7 +347,7 @@ const Home: React.FC = () => {
           </div>
         )}
       </nav>
-      <HeroSection isDarkMode scrollToSection={() => scrollToSection("contact")} />
+      <HeroSection isDarkMode={isDarkMode} scrollToSection={() => scrollToSection('contact')} />
 
       <section
         id="about"
@@ -517,81 +479,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section id="projects" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-center">
-            Featured{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Projects
-            </span>
-          </h2>
-          <p
-            className={
-              isDarkMode
-                ? 'text-center mb-20 text-lg text-slate-400'
-                : 'text-center mb-20 text-lg text-gray-600'
-            }
-          >
-            A showcase of my recent work in web development
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project: Project, idx: number) => (
-              <div
-                key={idx}
-                className={
-                  isDarkMode
-                    ? 'group bg-slate-800/30 border-slate-700 hover:border-cyan-500/50 border rounded-2xl overflow-hidden transition-all duration-300'
-                    : 'group bg-white border-gray-200 hover:border-cyan-500 border rounded-2xl overflow-hidden transition-all duration-300'
-                }
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div
-                    className={
-                      isDarkMode
-                        ? 'absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60'
-                        : 'absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-60'
-                    }
-                  ></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className={isDarkMode ? 'mb-4 text-slate-400' : 'mb-4 text-gray-600'}>
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech: string, techIdx: number) => (
-                      <span
-                        key={techIdx}
-                        className={
-                          isDarkMode
-                            ? 'px-3 py-1 rounded-full text-sm text-cyan-400 bg-slate-700/50'
-                            : 'px-3 py-1 rounded-full text-sm text-cyan-400 bg-cyan-50'
-                        }
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.link}
-                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
-                  >
-                    View Project {React.createElement(ExternalLink, { size: 16 })}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PortfolioSection isDarkMode={isDarkMode} />
 
       <section
         id="contact"
@@ -682,7 +570,19 @@ const Home: React.FC = () => {
 
           <div className="flex justify-center gap-6 mt-12">
             <a
-              href="#"
+              href="https://www.facebook.com/md.al.amin.372196"
+              target="_blank"
+              className={
+                isDarkMode
+                  ? 'w-12 h-12 bg-slate-800 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-colors'
+                  : 'w-12 h-12 bg-gray-200 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-colors'
+              }
+            >
+              {React.createElement(Facebook, { size: 20 })}
+            </a>
+            <a
+              href="https://github.com/Alamin-Coding"
+              target="_blank"
               className={
                 isDarkMode
                   ? 'w-12 h-12 bg-slate-800 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-colors'
@@ -692,7 +592,8 @@ const Home: React.FC = () => {
               {React.createElement(Github, { size: 20 })}
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/al-amin-coder"
+              target="_blank"
               className={
                 isDarkMode
                   ? 'w-12 h-12 bg-slate-800 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-colors'
@@ -702,7 +603,7 @@ const Home: React.FC = () => {
               {React.createElement(Linkedin, { size: 20 })}
             </a>
             <a
-              href="#"
+              href="mailto:md.alamin.coding@gmail.com"
               className={
                 isDarkMode
                   ? 'w-12 h-12 bg-slate-800 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-colors'
@@ -729,7 +630,7 @@ const Home: React.FC = () => {
               : 'max-w-7xl mx-auto text-center text-gray-500'
           }
         >
-          <p>&copy; 2025 MERN Stack Developer. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Full Stack Developer. All rights reserved.</p>
         </div>
       </footer>
     </div>
