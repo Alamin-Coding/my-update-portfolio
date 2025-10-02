@@ -19,6 +19,7 @@ import HeroSection from '@/components/HeroSection';
 
 import type {Award,FAQ,FormData,FormErrors,Project,Skill,TouchedFields} from "@/types/typeInterface"
 import PortfolioSection from '@/components/PortfolioSection';
+import ExperienceSection from '@/components/ExperienceSection';
 
 type SectionId = 'home' | 'about' | 'projects' | 'contact';
 
@@ -152,40 +153,6 @@ const Home: React.FC = () => {
     }
   };
 
-  const projects: Project[] = [
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'Full-stack MERN application with Redux state management, JWT authentication, and Stripe payment integration.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
-      link: '#',
-    },
-    {
-      title: 'Real-Time Chat Application',
-      description:
-        'WebSocket-based chat app with Socket.io, featuring private messaging, group chats, and file sharing.',
-      tech: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=600&h=400&fit=crop',
-      link: '#',
-    },
-    {
-      title: 'Task Management Dashboard',
-      description:
-        'Kanban-style project management tool with drag-and-drop functionality and real-time collaboration.',
-      tech: ['Next.js', 'TypeScript', 'Tailwind', 'PostgreSQL'],
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
-      link: '#',
-    },
-    {
-      title: 'Social Media Analytics',
-      description:
-        'Data visualization dashboard for social media metrics using Chart.js and React Query.',
-      tech: ['React', 'Chart.js', 'Express', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-      link: '#',
-    },
-  ];
 
   const skills: Skill[] = [
     {
@@ -349,6 +316,7 @@ const Home: React.FC = () => {
       </nav>
       <HeroSection isDarkMode={isDarkMode} scrollToSection={() => scrollToSection('contact')} />
 
+
       <section
         id="about"
         className={
@@ -478,6 +446,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ExperienceSection isDarkMode={isDarkMode} />
 
       <PortfolioSection isDarkMode={isDarkMode} />
 
