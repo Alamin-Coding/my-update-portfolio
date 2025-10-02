@@ -303,7 +303,7 @@ const Home: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Dev.Portfolio
+            Al@min
           </div>
 
           <div className="hidden md:flex space-x-8 items-center">
