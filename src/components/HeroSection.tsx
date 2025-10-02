@@ -19,7 +19,7 @@ const HeroSection = ({ isDarkMode, scrollToSection }: Props) => {
     'const Home: NextPage = () => {',
     '  return (',
     '    <main>',
-    "      <h1 className='text-4xl font-bold'>Hello, Next.js 👋</h1>",
+    "      <h1 className='text-4xl font-bold '>Hello, Next.js 👋</h1>",
     '    </main>',
     '  );',
     '};',
@@ -49,9 +49,7 @@ const HeroSection = ({ isDarkMode, scrollToSection }: Props) => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
-
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         {/* Left Side Code Effect */}
         <div
           ref={codeRef}
@@ -62,7 +60,7 @@ const HeroSection = ({ isDarkMode, scrollToSection }: Props) => {
           }`}
         >
           {lines.map((line, idx) => (
-            <p key={idx} className="code-line whitespace-pre opacity-0">
+            <p key={idx} className="code-line  text-wrap opacity-0">
               {line}
             </p>
           ))}

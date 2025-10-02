@@ -385,61 +385,6 @@ const Home: React.FC = () => {
           </div>
         )}
       </nav>
-
-      {/* <section id="home" className="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="mb-8 overflow-hidden">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 leading-tight">
-              <span className="block opacity-90">Crafting Digital</span>
-              <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Experiences
-              </span>
-            </h1>
-          </div>
-
-          <p
-            className={
-              isDarkMode
-                ? 'text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-slate-400'
-                : 'text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-600'
-            }
-          >
-            It's a passion for innovation, clean code, and scalable solutions
-          </p>
-
-          <p
-            className={
-              isDarkMode
-                ? 'mb-12 max-w-2xl mx-auto text-slate-500'
-                : 'mb-12 max-w-2xl mx-auto text-gray-500'
-            }
-          >
-            I build modern web applications using the MERN stack with a strong focus on React.js,
-            creating seamless user experiences with pixel-perfect designs
-          </p>
-
-          <div className="flex gap-4 justify-center items-center mb-16 flex-wrap">
-            <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>
-              MERN Stack Developer
-            </span>
-            <span className={isDarkMode ? 'text-slate-600' : 'text-gray-400'}>•</span>
-            <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>
-              React.js Specialist
-            </span>
-            <span className={isDarkMode ? 'text-slate-600' : 'text-gray-400'}>•</span>
-            <span className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>
-              Frontend Engineer
-            </span>
-          </div>
-
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 text-white"
-          >
-            Contact Me
-          </button>
-        </div>
-      </section> */}
       <HeroSection isDarkMode scrollToSection={() => scrollToSection("contact")} />
 
       <section
@@ -450,7 +395,7 @@ const Home: React.FC = () => {
             : 'py-32 px-6 bg-gray-100 transition-colors duration-300'
         }
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               Behind every great app is an <br />
@@ -573,7 +518,7 @@ const Home: React.FC = () => {
       </section>
 
       <section id="projects" className="py-32 px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-center">
             Featured{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -780,8 +725,8 @@ const Home: React.FC = () => {
         <div
           className={
             isDarkMode
-              ? 'max-w-6xl mx-auto text-center text-slate-500'
-              : 'max-w-6xl mx-auto text-center text-gray-500'
+              ? 'max-w-7xl mx-auto text-center text-slate-500'
+              : 'max-w-7xl mx-auto text-center text-gray-500'
           }
         >
           <p>&copy; 2025 MERN Stack Developer. All rights reserved.</p>
