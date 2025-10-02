@@ -17,11 +17,19 @@ import {
 } from 'lucide-react';
 import HeroSection from '@/components/HeroSection';
 
-import type {Award,FAQ,FormData,FormErrors,Project,Skill,TouchedFields} from "@/types/typeInterface"
+import type {
+  Award,
+  FAQ,
+  FormData,
+  FormErrors,
+  Project,
+  Skill,
+  TouchedFields,
+} from '@/types/typeInterface';
 import PortfolioSection from '@/components/PortfolioSection';
 import ExperienceSection from '@/components/ExperienceSection';
 
-type SectionId = 'home' | 'about' | 'projects' | 'contact';
+type SectionId = 'home' | 'about' | 'faq' | 'experience' | 'projects' | 'contact';
 
 const Home: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -153,7 +161,6 @@ const Home: React.FC = () => {
     }
   };
 
-
   const skills: Skill[] = [
     {
       icon: React.createElement(Code, { size: 32 }),
@@ -236,21 +243,23 @@ const Home: React.FC = () => {
           </div>
 
           <div className="hidden md:flex space-x-8 items-center">
-            {(['home', 'about', 'projects', 'contact'] as SectionId[]).map((item: SectionId) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={
-                  activeSection === item
-                    ? 'capitalize transition-colors text-cyan-400'
-                    : isDarkMode
-                      ? 'capitalize transition-colors text-slate-300 hover:text-cyan-400'
-                      : 'capitalize transition-colors text-gray-600 hover:text-cyan-500'
-                }
-              >
-                {item}
-              </button>
-            ))}
+            {(['home', 'about', 'experience', 'projects', 'contact'] as SectionId[]).map(
+              (item: SectionId) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className={
+                    activeSection === item
+                      ? 'capitalize transition-colors text-cyan-400'
+                      : isDarkMode
+                        ? 'capitalize transition-colors text-slate-300 hover:text-cyan-400'
+                        : 'capitalize transition-colors text-gray-600 hover:text-cyan-500'
+                  }
+                >
+                  {item}
+                </button>
+              ),
+            )}
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
               className={
@@ -315,7 +324,6 @@ const Home: React.FC = () => {
         )}
       </nav>
       <HeroSection isDarkMode={isDarkMode} scrollToSection={() => scrollToSection('contact')} />
-
 
       <section
         id="about"

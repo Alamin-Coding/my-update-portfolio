@@ -214,7 +214,7 @@ const PortfolioSection = ({ isDarkMode }: Props) => {
 
   return (
     <section
-      id="portfolio"
+      id="projects"
       ref={sectionRef}
       className={`relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-500 ${
         isDarkMode ? 'bg-slate-950' : 'bg-gray-50'
